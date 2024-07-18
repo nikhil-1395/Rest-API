@@ -5,7 +5,7 @@ import java.util.List;
 import com.springrest.entities.Course;
 
 public interface CourseService {
-	
+
 	public List<Course> getCourses();
 
 	public Course getCourse(long courseId);
@@ -14,6 +14,6 @@ public interface CourseService {
 
 	public Course updateCourse(Course course);
 
-	public void deleteCourse(long parseLong); 
-	
+	public void deleteCourse(long parseLong);
+
 }

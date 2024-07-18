@@ -10,8 +10,8 @@ public class Course {
 	private long id;
 	private String title;
 	private String description;
-	
-	//Generate constructor using fields
+
+	// Generate constructor using fields
 	public Course(long id, String title, String description) {
 		super();
 		this.id = id;
@@ -19,13 +19,13 @@ public class Course {
 		this.description = description;
 	}
 
-	//Generate constructor from Superclass
+	// Generate constructor from Superclass
 	public Course() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	//Generate Getters and Setters
+	// Generate Getters and Setters
 	public long getId() {
 		return id;
 	}
@@ -50,10 +50,10 @@ public class Course {
 		this.description = description;
 	}
 
-	//Generate toString()
+	// Generate toString()
 	@Override
 	public String toString() {
 		return "Course [id=" + id + ", title=" + title + ", description=" + description + "]";
 	}
-	
+
 }

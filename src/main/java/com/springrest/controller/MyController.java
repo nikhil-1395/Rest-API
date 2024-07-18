@@ -18,42 +18,37 @@ import com.springrest.services.CourseService;
 
 @RestController
 public class MyController {
-	
+
 	@Autowired
 	private CourseService courseService;
-	
-	
-	//Get all the courses
+
+	// Get all the courses
 	@GetMapping("/courses")
-	public List<Course> getCourses()
-	{
+	public List<Course> getCourses() {
 		return this.courseService.getCourses();
 	}
-	
-	//Get single course
+
+	// Get single course
 	@GetMapping("/courses/{courseId}")
-	public Course getCourse(@PathVariable String courseId)
-	{
+	public Course getCourse(@PathVariable String courseId) {
 		return this.courseService.getCourse(Long.parseLong(courseId));
 	}
-	
-	//Add new course
+
+	// Add new course
 	@PostMapping("/courses")
-	public Course addCourse(@RequestBody Course course)
-	{
+	public Course addCourse(@RequestBody Course course) {
 		return this.courseService.addCourse(course);
 	}
-	
-	//Update the course
+
+	// Update the course
 	@PutMapping("/courses")
-	public Course updateCourse(@RequestBody Course course)
-	{
+	public Course updateCourse(@RequestBody Course course) {
 		return this.courseService.updateCourse(course);
 	}
-	
-	//Delete the course
+
+	// Delete the course
 	@DeleteMapping("/courses/{courseId}")
-	public ResponseEntity<HttpStatus> deleteCourse(@PathVariable String courseId){
+	public ResponseEntity<HttpStatus> deleteCourse(@PathVariable String courseId) {
 		try {
 			this.courseService.deleteCourse(Long.parseLong(courseId));
 			return new ResponseEntity<>(HttpStatus.OK);
@@ -61,10 +56,5 @@ public class MyController {
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
+
 }
-
-
-
-
-
